@@ -59,10 +59,18 @@ const Navbars = () => {
         </NavDropdown>
         <Nav.Link className={classes.nav} href="/work">Space Holder</Nav.Link>
         <Nav.Link className={classes.nav} href="/about">About Us</Nav.Link>
+        {user?.result ? (
+        <Nav.Link className={classes.nav} href="/admin">Admin</Nav.Link>
+        ) : (
+        <div></div>
+          )}
         </Nav>
         <Nav>
         {user?.result ? (
+        <>
+        <Nav.Link className={classes.nav} href="/admin">Admin</Nav.Link>
         <Nav.Link className={classes.nav} onClick={logout}>Logout</Nav.Link>
+        </>
         ) : (
           <Nav.Link className={classes.nav} href="/auth">Sign In</Nav.Link>
         )}

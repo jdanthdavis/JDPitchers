@@ -1,14 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles((theme) => ({
-  mainContainer: {
-    display: 'flex',
-    alignItems: 'center',
+export default makeStyles(() => ({
+  floatDiv: {
+    float: 'left',
+    paddingRight: '.3rem',
   },
-  smMargin: {
-    margin: theme.spacing(1),
-  },
-  actionDiv: {
-    textAlign: 'center',
-  },
+  progress: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%'
+  }
 }));
