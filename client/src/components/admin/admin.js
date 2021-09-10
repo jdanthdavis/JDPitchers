@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 
 import Form from '../../components/form/form';
 import { getPosts } from '../../actions/posts';
+
+import './styles.css'
     
 const Admin = () => {
     const [currentId, setCurrentId] = useState(0);
@@ -14,9 +16,9 @@ const Admin = () => {
     }, [currentId, dispatch]);
   
       return (
-        <Grow in>
-            <Form currentId={currentId} setCurrentId={setCurrentId} />
-        </Grow>
+        <div className='floatDiv'>
+        <Form currentId={currentId} setCurrentId={setCurrentId} />
+        </div>
   
     );
   };

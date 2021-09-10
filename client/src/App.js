@@ -8,6 +8,7 @@ import Auth from './components/auth/auth';
 import Inventory from './components/inventory/inventory';
 import Admin from './components/admin/admin';
 import About from './components/about/about';
+import InventoryDetails from './components/inventory/inventoryDetails';
 
 // work
 import Crosses2021 from './components/work/2021crosses';
@@ -20,7 +21,7 @@ import Crosses2015 from './components/work/2015crosses';
 import Crosses2014 from './components/work/2014crosses';
 import ViewMore from './components/work/viewMore';
 
-const App = () => (
+const App = (post) => (
   <BrowserRouter>
     <Container maxWidth="lg">
       <Navbars />
@@ -30,6 +31,8 @@ const App = () => (
         <Route path="/inventory" exact component={Inventory} />
         <Route path="/admin" exact component={Admin} />
         <Route path="/about" exact component={About} />
+
+        <Route path="/inventoryDetails/:id" component={InventoryDetails} />
 
         {/* work */}
         <Route path='/2021crosses' exact component={Crosses2021} />

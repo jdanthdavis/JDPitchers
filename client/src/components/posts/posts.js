@@ -1,7 +1,7 @@
 import React from 'react';
 import { CircularProgress } from '@material-ui/core';
 import { useSelector } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 import Post from './post/post';
 
 import useStyles from './styles';
@@ -15,8 +15,9 @@ const Posts = ({ setCurrentId }) => {
         <>
         {posts.map((post) => (
           <div className={classes.floatDiv}>
-            <Post post={post} setCurrentId={setCurrentId} />
+             <Post post={post} setCurrentId={setCurrentId} />
           </div>
+          
         ))}
         </>
       )

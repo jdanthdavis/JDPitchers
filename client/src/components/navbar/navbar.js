@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 import * as actionType from '../../constants/actionTypes';
 
-import useStyles from './styles';
+import './styles.css';
 import Logo from '../../images/logo.png'
 
 const Navbars = () => {
@@ -13,11 +13,6 @@ const Navbars = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const history = useHistory();
-  const classes = useStyles();
-
-  const linkStyle = {
-    color: '#5b7b37'
-  };
 
   const logout = () => {
     
@@ -39,17 +34,17 @@ const Navbars = () => {
 
     setUser(JSON.parse(localStorage.getItem('profile')));
   }, [location]);
-  return (
 
-<Navbar bg="light" expand="lg">
+  return (
+<Navbar className='color-nav' expand="lg">
   <Container>
-    <Navbar.Brand href="/"><img className={classes.logo} src={Logo} alt="circle"></img> JDPitchers</Navbar.Brand>
+    <Navbar.Brand href="/"><img className='img' src={Logo} alt="circle"></img> JDPitchers</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="m-auto">
-        <Nav.Link className={classes.nav} href="/">Home</Nav.Link>
-        <Nav.Link className={classes.nav} href="/inventory">Collection</Nav.Link>
-        <NavDropdown className={classes.nav} title="Work" id="basic-nav-dropdown">
+        <Nav.Link href="/">Home</Nav.Link>
+        <Nav.Link href="/inventory">Collection</Nav.Link>
+        <NavDropdown title="Work" id="basic-nav-dropdown">
           <NavDropdown.Item href="/2020crosses">2020 Crosses</NavDropdown.Item>
           <NavDropdown.Item href="/2019crosses">2019 Crosses</NavDropdown.Item>
           <NavDropdown.Item href="/2018crosses">2018 Crosses</NavDropdown.Item>
@@ -57,19 +52,18 @@ const Navbars = () => {
           <NavDropdown.Divider />
           <NavDropdown.Item href="/viewmore">View More</NavDropdown.Item>
         </NavDropdown>
-        <Nav.Link className={classes.nav} href="/work">Space Holder</Nav.Link>
-        <Nav.Link className={classes.nav} href="/about">About Us</Nav.Link>
+        <Nav.Link href="/work">Space Holder</Nav.Link>
+        <Nav.Link href="/about">About Us</Nav.Link>
         </Nav>
         <Nav>
         {user?.result ? (
         <>
-        <Nav.Link className={classes.nav} href="/admin">Admin</Nav.Link>
-        <Nav.Link className={classes.nav} onClick={logout}>Logout</Nav.Link>
+        <Nav.Link href="/admin">Admin</Nav.Link>
+        <Nav.Link onClick={logout}>Logout</Nav.Link>
         </>
         ) : (
-          <Nav.Link className={classes.nav} href="/auth">Sign In</Nav.Link>
+          <Nav.Link href="/auth">Sign In</Nav.Link>
         )}
-
       </Nav>
     </Navbar.Collapse>
   </Container>

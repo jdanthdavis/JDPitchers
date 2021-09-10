@@ -12,6 +12,16 @@ export const getPosts = () => async (dispatch) => {
   }
 };
 
+export const getPost = async (id) => async (dispatch) => {
+  try {
+      const post = await api.findById(id);
+      
+      dispatch({ type: FETCH_ALL, payload: post });
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 export const createPost = (post) => async (dispatch) => {
   try {
     const { data } = await api.createPost(post);

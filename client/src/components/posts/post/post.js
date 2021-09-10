@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core/';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
@@ -17,6 +18,7 @@ const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem('profile'));
+  
 
   return (
     <>
@@ -25,16 +27,13 @@ const Post = ({ post, setCurrentId }) => {
     <Card.Body>
     <Card.Title>{post.idTag}</Card.Title>
     <Card.Text>
-      Cross: {post.cross}
-      <br/>
-      Species: {post.species}
-      <br />
       Name: {post.plantName}
-      <br/>
-      Notes: {post.notes}
+      <br />
+      Species: {post.species}
       <br />
       Location: {post.location}
     </Card.Text>
+    <Link to={"/inventoryDetails/"+post._id} className="btn btn-primary col-log-5 mx-1 mb-1">More Details</Link>
     {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
       <Button size="sm" color="primary" onClick={() => setCurrentId(post._id)}><Edit fontSize="small" /> Edit</Button>
     )}
