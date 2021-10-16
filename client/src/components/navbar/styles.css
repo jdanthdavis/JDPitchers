@@ -3,12 +3,22 @@
 }
 
 .nav-link {
-  color: #000000 !important;
-  font-size: 1.2rem;
+  color: #ffffff !important;
+  font-size: 1.3rem;
+  font-weight: bold;
   font-family: 'Roboto', sans-serif;
+  margin-right: 25px;
+  margin-left: 25px;
 }
 
 .img {
   padding-right: 1rem;
   width: 5rem;
+}
+
+.HomeLogoText {
+  color: #ffffff !important;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
 }

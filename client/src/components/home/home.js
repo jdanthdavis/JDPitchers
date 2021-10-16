@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbars from '../../components/navbar/navbar';
+import dotenv from 'dotenv';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Container, Grow, Grid } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
@@ -14,6 +15,8 @@ import Form from '../form/form';
 import './styles.css';
 import useStyles from './styles';
 
+dotenv.config();
+
 const Home = () => {
   const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
@@ -23,18 +26,14 @@ const Home = () => {
   }, [currentId, dispatch]); 
 
   const classes = useStyles();
-
+  const Insta = process.env.REACT_APP_INSTA_KEY;
+  
   return (
     <>
-      <Container className='bg_image'>
+      <div className='bg_image'>
         <Navbars />
-      </Container>
-    {/* <LazyLoadImage
-    className={classes.banner}
-    alt="Flava Ornata"
-    src={Banner} /> */}
-    {/* <InstagramFeed token="your_access_token"  counter="6"/> */}
-    <Footer />
+      </div>
+    {/* <InstagramFeed token={Insta}  counter="6"/> */}
     </>
   );
 };

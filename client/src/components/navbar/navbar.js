@@ -42,9 +42,9 @@ const Navbars = () => {
     <Navbar.Brand href="/">
       <LazyLoadImage
       className='img'
-      alt="Flava Ornata"
+      alt="Home Logo"
       src={Logo} />
-      JDPitchers
+      <span className='HomeLogoText'>JDPitchers</span>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

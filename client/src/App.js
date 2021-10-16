@@ -3,6 +3,7 @@ import { Container } from '@material-ui/core';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Home from './components/home/home';
+import Footer from './components/footer/footer';
 import Auth from './components/auth/auth';
 import Inventory from './components/inventory/inventory';
 import Admin from './components/admin/admin';
@@ -28,7 +29,6 @@ const App = (post) => (
           <Route path="/inventory" exact component={Inventory} />
           <Route path="/admin" exact component={Admin} />
           <Route path="/about" exact component={About} />
-
           <Route path="/inventoryDetails/:id" component={InventoryDetails} />
 
           {/* work */}
@@ -42,6 +42,7 @@ const App = (post) => (
           <Route path='/2014crosses' exact component={Crosses2014} />
           <Route path='/viewmore' exact component={ViewMore} />
         </Switch>
+        <Footer />
     </BrowserRouter>
 );
 

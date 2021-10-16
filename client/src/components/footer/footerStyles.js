@@ -1,7 +1,7 @@
 import styled from 'styled-components';
    
 export const Box = styled.div`
-  padding: 80px 60px;
+  padding: 20px 60px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -47,7 +47,7 @@ export const FooterLink = styled.a`
   text-decoration: none;
    
   &:hover {
-      color: white;
+      color: grey;
       transition: 200ms ease-in;
   }
 `;
@@ -64,10 +64,23 @@ export const HolderLink = styled.a`
     transition: 200ms ease-in;
 }
 `;
+
+export const HeadingLink = styled.a`
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    color: grey;
+    transition: 200ms ease-in;
+}
+`;
    
 export const Heading = styled.p`
   font-size: 24px;
   color: #fff;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-weight: bold;
 `;
