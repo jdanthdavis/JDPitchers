@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbars from '../../components/navbar/navbar';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
 import { useDispatch, useSelector } from 'react-redux';
@@ -43,6 +44,8 @@ const Form = ({ currentId, setCurrentId }) => {
 
 
     return (
+      <>
+      <Navbars />
         <Paper className={classes.paper}>
             <form autoComplete='off' noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
             <Typography variant='h6'>{currentId ? 'Editing' : 'Add' } a plant</Typography>
@@ -57,6 +60,7 @@ const Form = ({ currentId, setCurrentId }) => {
             <Button variant='contained' color='secondary' size='small' onClick={clear} fullWidth>Clear</Button>
             </form>
         </Paper>
+      </>
     );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
@@ -38,7 +39,13 @@ const Navbars = () => {
   return (
 <Navbar className='color-nav' expand="lg">
   <Container>
-    <Navbar.Brand href="/"><img className='img' src={Logo} alt="circle"></img> JDPitchers</Navbar.Brand>
+    <Navbar.Brand href="/">
+      <LazyLoadImage
+      className='img'
+      alt="Flava Ornata"
+      src={Logo} />
+      JDPitchers
+    </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="m-auto">
@@ -62,7 +69,7 @@ const Navbars = () => {
         <Nav.Link onClick={logout}>Logout</Nav.Link>
         </>
         ) : (
-          <Nav.Link href="/auth">Sign In</Nav.Link>
+          <Nav.Link href="/"></Nav.Link>
         )}
       </Nav>
     </Navbar.Collapse>

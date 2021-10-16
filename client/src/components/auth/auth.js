@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbars from '../../components/navbar/navbar';
 import { useDispatch } from 'react-redux';
 import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
@@ -57,6 +58,8 @@ const SignUp = () => {
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   return (
+    <>
+    <Navbars />
     <Container component="main" maxWidth="xs">
       <Paper className={classes.paper} elevation={3}>
         <Avatar className={classes.avatar}>
@@ -99,6 +102,7 @@ const SignUp = () => {
         </form>
       </Paper>
     </Container>
+    </>
   );
 };
 

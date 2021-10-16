@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Card , Button  } from 'react-bootstrap';
+import Navbars from '../../components/navbar/navbar';
+import { Card , Button, Nav  } from 'react-bootstrap';
 import { Grid, CircularProgress } from '@material-ui/core';
 import { Container, Grow } from '@material-ui/core';
 import { Card as bootCard, Button as bootButton } from 'react-bootstrap';
@@ -21,7 +22,10 @@ const Inventory = () => {
   }, [currentId, dispatch]);
 
     return (
+      <>
+      <Navbars />
       <Posts setCurrentId={setCurrentId} />
+      </>
   );
 };
 

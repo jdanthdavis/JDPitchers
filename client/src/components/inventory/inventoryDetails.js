@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navbars from '../../components/navbar/navbar';
 import { Link } from 'react-router-dom';
 import ImageGallery from 'react-image-gallery';
 
@@ -37,7 +38,7 @@ const Inventory = props => {
         getPost(props.match.params.id);
       }, [props.match.params.id]);
 
-      // For ImageGallery
+    // For ImageGallery
     const images = [
         {
             original: `${inventoryDetail.selectedFile}`,
@@ -55,6 +56,8 @@ const Inventory = props => {
     
 
     return (
+        <>
+        <Navbars />
         <div className='detailContainer'>
         <div className='split right'>
             <div className='gallery'>
@@ -83,6 +86,7 @@ const Inventory = props => {
             
         </div>
         </div>
+        </>
       );
     };
     

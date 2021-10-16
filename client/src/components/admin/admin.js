@@ -16,10 +16,11 @@ const Admin = () => {
     }, [currentId, dispatch]);
   
       return (
+        <>
         <div className='floatDiv'>
         <Form currentId={currentId} setCurrentId={setCurrentId} />
         </div>
-  
+        </>
     );
   };
   
