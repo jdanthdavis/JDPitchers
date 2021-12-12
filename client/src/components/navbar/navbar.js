@@ -59,8 +59,10 @@ const Navbars = () => {
           <NavDropdown.Divider />
           <NavDropdown.Item href="/viewmore">View More</NavDropdown.Item>
         </NavDropdown>
-        <Nav.Link href="/work">Space Holder</Nav.Link>
+        <Nav.Link href="https://www.instagram.com/jdpitchers" target="_blank" rel="noopener noreferrer">
+          Instagram</Nav.Link>
         <Nav.Link href="/about">About Us</Nav.Link>
+        <Nav.Link href="mailto:jdpitchers@gmail.com">Contact Us</Nav.Link>
         </Nav>
         <Nav>
         {user?.result ? (

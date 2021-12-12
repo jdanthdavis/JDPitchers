@@ -26,6 +26,7 @@ const Inventory = () => {
     return (
       <>
       <Navbars />
+      <p className='text-center'><i>Please be aware JDPitchers uses free hosting software. This may increase loading times on this page.</i></p>
       <div className='container'>
         <Posts setCurrentId={setCurrentId} />
       </div>
