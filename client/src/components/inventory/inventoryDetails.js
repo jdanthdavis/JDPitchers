@@ -8,10 +8,6 @@ import * as api from '../../api/index';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import banner from '../../images/banner.jpg'
-import splinter from '../../images/splinter.jpg';
-import airport from '../../images/airport.jpg';
-
 const Inventory = props => {
     const inventoryState = {
         id: null,
@@ -42,49 +38,42 @@ const Inventory = props => {
     const images = [
         {
             original: `${inventoryDetail.selectedFile}`,
-            thumbnail: `${banner}`
-        },
-        {
-            original: `${splinter}`,
-            thumbnail: `${splinter}`
-        },
-        {
-            original: `${airport}`,
-            thumbnail: `${airport}`
-        },
+            thumbnail: `${inventoryDetail.selectedFile}`
+        }
     ];
-    
 
     return (
         <>
         <Navbars />
-        <div className='detailContainer'>
-        <div className='split right'>
-            <div className='gallery'>
-                <ImageGallery 
-                items={images}
-                infinite={true}
-                showPlayButton={false} 
-                showFullscreenButton={true}
-                showThumbnails={true} 
-                showNav={true} >
-                </ImageGallery>
-            </div>
-        </div>
-        <div className=''>
-            <div className=''>
-                <div className='test' >
-                <h1>Plant ID: {inventoryDetail.idTag}</h1>
-                <h2>Species: {inventoryDetail.species}</h2>
-                <p><strong>Cross: </strong>{inventoryDetail.cross}</p>
-                <p><strong>Name: </strong>{inventoryDetail.plantName}</p>
-                <p><strong>Location Data: </strong>{inventoryDetail.location}</p>
-                <p><strong>Notes: </strong>{inventoryDetail.notes}</p>
-                <Link to="/inventory" className="btn btn-primary col-log-5 mx-1 mb-1">Back to Collection</Link>
+        <div className='container'>
+            <div className='detailContainer'>
+                <div className='split right'>
+                    <div className='detailImage'>
+                    <ImageGallery 
+                    items={images}
+                    showPlayButton={false} 
+                    showFullscreenButton={true}
+                    showThumbnails={false} 
+                    showNav={false}
+                    lazyLoad={true}>
+                    </ImageGallery>
+                    </div>
+                </div>
+                <div className='wordSafe'>
+                    <div className=''>
+                        <div className='test' >
+                        <h1>Plant ID: {inventoryDetail.idTag}</h1>
+                        <h2>Species: {inventoryDetail.species}</h2>
+                        <p><strong>Cross: </strong>{inventoryDetail.cross}</p>
+                        <p><strong>Name: </strong>{inventoryDetail.plantName}</p>
+                        <p><strong>Location Data: </strong>{inventoryDetail.location}</p>
+                        <p><strong>Notes: </strong>{inventoryDetail.notes}</p>
+                        <Link to="/inventory" className="btn btn-primary col-log-5 mx-1 mb-1">Back to Collection</Link>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-            
-        </div>
         </div>
         </>
       );

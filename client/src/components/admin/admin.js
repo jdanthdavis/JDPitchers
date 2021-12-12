@@ -17,7 +17,7 @@ const Admin = () => {
   
       return (
         <>
-        <div className='floatDiv'>
+        <div className='container'>
         <Form currentId={currentId} setCurrentId={setCurrentId} />
         </div>
         </>

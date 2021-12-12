@@ -1,0 +1,21 @@
+.progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.floatDiv {
+  flex-wrap: wrap;
+}
+
+.blocks {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-right: 2rem;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 13vw;
+  object-fit: cover;
+}

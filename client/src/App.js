@@ -42,7 +42,7 @@ const App = (post) => (
           <Route path='/2014crosses' exact component={Crosses2014} />
           <Route path='/viewmore' exact component={ViewMore} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
     </BrowserRouter>
 );
 

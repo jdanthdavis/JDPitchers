@@ -19,6 +19,7 @@
     "react-file-base64": "^1.0.3",
     "react-ig-feed": "^1.0.4",
     "react-image-gallery": "^1.2.7",
+    "react-image-lightbox": "^5.1.4",
     "react-lazy-load-image-component": "^1.5.1",
     "react-native": "^0.66.1",
     "react-native-cli": "^2.0.1",

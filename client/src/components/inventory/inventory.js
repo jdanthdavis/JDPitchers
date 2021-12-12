@@ -13,6 +13,8 @@ import useStyles from '../../styles';
 import '../../index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import './styles.css';
+
 const Inventory = () => {
   const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
@@ -24,7 +26,9 @@ const Inventory = () => {
     return (
       <>
       <Navbars />
-      <Posts setCurrentId={setCurrentId} />
+      <div className='container'>
+        <Posts setCurrentId={setCurrentId} />
+      </div>
       </>
   );
 };

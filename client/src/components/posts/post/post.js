@@ -11,19 +11,24 @@ import Edit from '@material-ui/icons/Edit';
 // import { useDispatch } from 'react-redux';
 import { deletePost, likePost } from '../../../actions/posts';
 
+import '../styles.css';
 import useStyles from './styles';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import noImage from '../../../images/noPlantImage.png';
 
 const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem('profile'));
-  
+  const isThumbnail = post.selectedFile;
 
   return (
     <>
     <Card style={{ width: '12rem' }} title={post.title}>
-    <Card.Img variant="top" src={post.selectedFile} />
+    {isThumbnail
+      ? <Card.Img variant="top" src={post.selectedFile} />
+      : <Card.Img variant="top" src={noImage} />
+    }
     <Card.Body>
     <Card.Title>{post.idTag}</Card.Title>
     <Card.Text>

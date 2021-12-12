@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Post from './post/post';
 
+import './styles.css';
 import useStyles from './styles';
 
 const Posts = ({ setCurrentId }) => {
@@ -11,12 +12,12 @@ const Posts = ({ setCurrentId }) => {
     const classes = useStyles();
 
     return (
-      !posts.length ? <CircularProgress className={classes.progress} /> : (
+      !posts.length ? <CircularProgress classes={classes.progress} /> : (
         <>
         {posts.map((post) => (
-          <div className={classes.floatDiv}>
+            <div className='blocks'>
              <Post post={post} setCurrentId={setCurrentId} />
-          </div>
+             </div>
           
         ))}
         </>

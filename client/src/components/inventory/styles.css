@@ -3,6 +3,7 @@
 .detailContainer {
   padding-top: 2rem;
   font-family: 'Roboto', sans-serif;
+  text-align: left;
 }
 
 .centered img {
@@ -42,12 +43,23 @@
   right: -2%;
 }
 
-.gallery {
+.detailImage {
   width: 50%;
   margin-left: 10rem;
   padding-bottom: 10rem;
 }
 
 .test {
+  padding-top: 1rem;
+  padding-left: 5rem;
   width: 50%;
+}
+
+.wordSafe {
+  word-wrap: break-word;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
 }

@@ -37,7 +37,7 @@ const Navbars = () => {
   }, [location]);
 
   return (
-<Navbar className='color-nav' expand="lg">
+<Navbar className='color-nav' expand="lg" bg="dark">
   <Container>
     <Navbar.Brand href="/">
       <LazyLoadImage
